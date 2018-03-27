@@ -1,7 +1,7 @@
 # JavaScript Episode 4
 
-In this exercise we're going to build a dynamic to-do list application
-using the DOM API.
+In this exercise we're going to build a functioning chat application called Chatr.
+It will use Axios to make requests to a Django API server that we have up and running.
 
 ## Instructions
 
@@ -23,10 +23,10 @@ You should have the following directory layout
 You can run the project by opening `index.html`:
 
 ```
-$ cd JSEpisode4/
+$ cd JSEpisode5/
 $ open index.html
 ```
 
 You're going to be editing `app.js`.
 
-You'll find the instructions on [warehouse](http://warehouse.joincoded.com/workshop/javascript-episode-iv/exercise/to-do-list/)
+You'll find the instructions on [warehouse](http://warehouse.joincoded.com/workshop/javascript-episode-v/exercise/chatr/)
