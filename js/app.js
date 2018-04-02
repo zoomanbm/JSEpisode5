@@ -10,6 +10,8 @@ const messageInput = document.getElementById("new-message");
 const sendButton = document.getElementById("send-button");
 const messages = document.getElementById("messages");
 
+let latestTimestamp;
+
 // Add a click handlers to global buttons
 sendButton.onclick = sendMessage;
 editButton.onclick = editUsername;
@@ -76,11 +78,15 @@ function sendMessage() {
 *		(you can use createNewMessage to do this)
 *****************************************************/
 function getAllMessages() {
-	axios.get('http://192.168.1.21/messages/')
+	let url = 'http://192.168.1.21/messages/?latest=' + (latestTimestamp || '');
+	axios.get(url)
 		.then(res => res.data)
 		.then(newMessages => {
-			messages.innerHTML = "";
+			console.log(newMessages);
 			newMessages.forEach(createNewMessage)
+			if (newMessages.length) {
+				latestTimestamp = newMessages.pop().timestamp;
+			}
 		})
 		.catch(error => console.error(error));
 };
