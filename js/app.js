@@ -18,7 +18,7 @@ editButton.onclick = editUsername;
 * Create a new message item:
 *
 * Generates a new message item using the data
-* in the messageObj and appends it to the
+* in the messageObj and prepends it to the
 * messages list.
 *
 * createNewMessage(messageObj);
@@ -48,7 +48,7 @@ function createNewMessage(messageObj) {
 * - Use Axios to post that message to the server at:
 *			<ip_address>/messages/create/
 * - Then add your own message to the page
-*		using createNewMessage()
+*		using createNewMessage
 * - Don't forget to clear the message input.
 *****************************************************/
 function sendMessage() {
