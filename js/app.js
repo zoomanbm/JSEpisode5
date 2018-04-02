@@ -35,8 +35,8 @@ function createNewMessage(messageObj) {
 	listItem.appendChild(username);
 	listItem.appendChild(message);
 
-	// Append the new message to the messages area
-	messages.appendChild(listItem);
+	// Prepend the new message to the beginning off the messages area
+	messages.insertBefore(listItem, messages.firstChild);
 };
 
 
