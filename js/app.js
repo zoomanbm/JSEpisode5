@@ -49,6 +49,7 @@ function createNewMessage(messageObj) {
 *			<ip_address>/messages/create/
 * - Then add your own message to the page
 *		using createNewMessage()
+* - Don't forget to clear the message input.
 *****************************************************/
 function sendMessage() {
   // Complete me!
