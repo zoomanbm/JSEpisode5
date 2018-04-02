@@ -52,7 +52,16 @@ function createNewMessage(messageObj) {
 * - Don't forget to clear the message input.
 *****************************************************/
 function sendMessage() {
-  // Complete me!
+	let newMessage = {
+		username: usernameInput.value,
+		message: messageInput.value
+	};
+  axios.post('http://192.168.1.21/messages/create/', newMessage)
+		.then(() => {
+			createNewMessage(newMessage);
+			messageInput.value = '';
+		})
+		.catch(error => console.error(error));
 };
 
 
