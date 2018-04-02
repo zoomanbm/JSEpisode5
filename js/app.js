@@ -1,7 +1,9 @@
 // Retrieve the high-level elements on the page:
-// - The new task input field
-// - The add new task button
-// - The to-do list iteslf
+// - The username input field
+// - The edit button
+// - The new message input field
+// - The send message button
+// - The list of messages
 const usernameInput = document.getElementById("username-input");
 const editButton = document.getElementById("edit-username-button");
 const messageInput = document.getElementById("new-message");
@@ -31,9 +33,25 @@ function createNewMessage(messageObj) {
 
   // Append each element to the listItem
 	listItem.appendChild(username);
-	listItem.appendChild(username);
+	listItem.appendChild(message);
 
+	// Append the new message to the messages area
 	messages.appendChild(listItem);
+};
+
+
+/*****************************************************
+* Send a new message to the server:
+* - Create a messageObj with the following properties:
+*			* username
+*			* message
+* - Use Axios to post that message to the server at:
+*			<ip_address>/messages/create/
+* - Then add your own message to the page
+*		using createNewMessage()
+*****************************************************/
+function sendMessage() {
+  // Complete me!
 };
 
 
@@ -45,22 +63,9 @@ function createNewMessage(messageObj) {
 * - Then erase all the current messages
 * - Then add each message from the response to the
 *		messages area.
+*		(you can use createNewMessage to do this)
 *****************************************************/
 function getAllMessages() {
-  // Complete me!
-};
-
-
-/*****************************************************
-* Send a new message to the server:
-* - Create a messageObj with the following properties:
-*			* username
-*			* message
-* - Use Axios to post that message to the server at:
-*			<ip_address>/messages/create
-* - Then update the UI using createNewMessage()
-*****************************************************/
-function sendMessage() {
   // Complete me!
 };
 
@@ -87,5 +92,3 @@ function editUsername() {
 
   usernameSection.classList.toggle('editMode');
 };
-
-getAllMessages();
