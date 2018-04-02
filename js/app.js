@@ -84,7 +84,7 @@ function getAllMessages() {
   axios.get('http://192.168.100.54/messages/')
     .then(response => response.data)
     .then(data => {
-      for(let i =0, i<= data.length(), i++){
+      for(let i =0 ;i < data.length; i++){
         createNewMessage(data[i]);
         console.log(data[i]);  // [{title: 'Hello AJAX', published: true}, {title: 'Benefits of Machboos' ....
       }  
