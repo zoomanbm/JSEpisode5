@@ -60,7 +60,7 @@ function sendMessage() {
 * Retrieve all messages from the server:
 * - Use Axios to get all the messages currently
 *		on the server at:
-*			<ip_address>/messages
+*			<ip_address>/messages/
 * - Then erase all the current messages
 * - Then add each message from the response to the
 *		messages area.
