@@ -52,7 +52,19 @@ function createNewMessage(messageObj) {
 * - Don't forget to clear the message input.
 *****************************************************/
 function sendMessage() {
-  // Complete me!
+  let context = {
+  username: usernameInput.value,
+  message: messageInput.value
+}
+axios.post('http://192.168.100.54/messages/create/', context)
+    .then(response => {
+      messageInput.value = "";
+      return createNewMessage(context);
+      
+
+        // the article was posted successfully
+    })
+    .catch(error => console.error(error));
 };
 
 
@@ -68,6 +80,18 @@ function sendMessage() {
 *****************************************************/
 function getAllMessages() {
   // Complete me!
+  
+  axios.get('http://192.168.100.54/messages/')
+    .then(response => response.data)
+    .then(data => {
+      for(let i =0, i<= data.length(), i++){
+        createNewMessage(data[i]);
+        console.log(data[i]);  // [{title: 'Hello AJAX', published: true}, {title: 'Benefits of Machboos' ....
+      }  
+        
+     })
+    .catch(error => console.error(error));
+
 };
 
 
